@@ -4,7 +4,7 @@ import PetList from '../Components/PetList/PetList'
 
 const mapStateToProps = (state) => {
   return {
-    pets: state.pets,
+    pets: state.pets
   }
 }
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PetList)
+export default connect(mapStateToProps, mapDispatchToProps)

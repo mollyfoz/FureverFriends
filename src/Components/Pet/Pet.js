@@ -12,4 +12,4 @@ const Pet = ({ }) => {
   )
 }
 
-export default Pet
+export default PetListContainer(Pet)
