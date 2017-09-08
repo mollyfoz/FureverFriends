@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.card-container {
+  width: 200px;
+  height: 200px;
+  background-color: #FAFBFA;
+  color: #444747;
+  margin: 10px;
+}
