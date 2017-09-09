@@ -4,12 +4,8 @@ import PetList from './Components/PetList/PetList'
 import './App.css'
 // import { Link } from 'react-router-redux'
 // import { Route, NavLink, Link } from 'react-router-dom'
-import PetListContainer from './containers/PetListContainer'
 
 export default class App extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
 

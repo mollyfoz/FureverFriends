@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 import { fetchPets } from './reducers'
 
-export default combineReducers({
-    fetchPets
+const rootReducer = combineReducers({
+  fetchPets
 })
+
+export default rootReducer

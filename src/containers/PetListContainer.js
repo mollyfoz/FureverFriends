@@ -1,10 +1,9 @@
 import { connect } from 'react-redux'
 import { fetchPetData } from '../actions/index'
-import PetList from '../Components/PetList/PetList'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (store) => {
   return {
-    pets: state.pets
+    pets: store.fetchPets
   }
 }
 
