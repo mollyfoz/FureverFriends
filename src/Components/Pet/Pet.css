@@ -5,9 +5,34 @@
 }
 
 .card-container {
-  width: 200px;
-  height: 200px;
-  background-color: #FAFBFA;
-  color: #444747;
+  width: 220px;
+  height: 250px;
+  background-color: #F8FDF8;
+  border-radius: 4px;
+  color: #954856;
   margin: 10px;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  overflow: scroll;
+  box-shadow: 0 1px 1px gray;
+}
+
+.pet-info {
+  color: #954856;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.pet-desc {
+  font-size: 14px;
+  text-align: left;
+}
+
+.image {
+  width: 175px;
+  height: 150px;
+  background-color: #ABA62F;
+  border-radius: 4px;
+  margin: 0 auto;
 }

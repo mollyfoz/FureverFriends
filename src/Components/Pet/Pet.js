@@ -1,15 +1,16 @@
 import React from 'react'
-import PetListContainer from '../../containers/PetListContainer'
 import './Pet.css'
 
-
-const Pet = ({ }) => {
+export const Pet = ( {petDetails} ) => {
 
   return (
     <div className='card-container'>
-      <h1>New Friend</h1>
+        <div className='image'>
+        </div>
+        <div className="pet-details">
+          <h4>{ petDetails.name }</h4>
+          <p className="pet-info">{ petDetails.age } :: { petDetails.gender }</p>
+        </div>
     </div>
   )
 }
-
-export default PetListContainer(Pet)

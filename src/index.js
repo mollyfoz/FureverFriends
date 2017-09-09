@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 import configureStore from './configureStore'
 
+
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 const store = configureStore(devTools)
 
