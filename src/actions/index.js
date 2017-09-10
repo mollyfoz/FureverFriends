@@ -12,7 +12,7 @@ export const fetchPetData = (url) => {
     fetch(proxyURL + url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
-      .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, gender: pet.sex.$t, desc: pet.description.$t} )))
+      .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t } )))
       .then(pets => dispatch(fetchPets(pets)))
       .catch(error => console.log('ERROR ', error))
   }

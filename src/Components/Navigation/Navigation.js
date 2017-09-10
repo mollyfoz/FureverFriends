@@ -6,7 +6,7 @@ const Navigation = () => {
 
   return (
     <div className='navigation-container'>
-      <h1>Furever Friends</h1>
+      <h1>Furever<span> Friends</span></h1>
       <div className='nav-links'>
         <h3>Dogs</h3>
         <h3>Cats</h3>

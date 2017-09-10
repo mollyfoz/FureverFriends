@@ -8,19 +8,17 @@
   width: 220px;
   height: 250px;
   background-color: #F8FDF8;
-  border-radius: 4px;
   color: #954856;
   margin: 10px;
   padding: 10px;
   font-size: 24px;
   text-align: center;
-  overflow: scroll;
-  box-shadow: 0 1px 1px gray;
+  box-shadow: 1px 1px 0 0 #253848;
 }
 
 .pet-info {
   color: #954856;
-  font-size: 14px;
+  font-size: 16px;
   padding: 5px 0;
 }
 

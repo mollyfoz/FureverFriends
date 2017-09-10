@@ -9,7 +9,7 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPetData: (url) => dispatch(fetchPetData(url))
+    fetchPetData: (url) => dispatch(fetchPetData(url)),
   }
 }
 
