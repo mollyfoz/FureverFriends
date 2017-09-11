@@ -6,7 +6,6 @@
 
 .card-container {
   width: 220px;
-  height: 250px;
   background-color: #F8FDF8;
   color: #954856;
   margin: 10px;
@@ -33,4 +32,22 @@
   background-color: #ABA62F;
   border-radius: 4px;
   margin: 0 auto;
+}
+
+button {
+  background-color: #253848;
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+  font-size: 14px;
+  color: #F8FDF8;
+  padding: 10px;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #F8FDF8;
+  color: #253848;
+  box-shadow: 1px 1px .5px .5px #253848;
 }

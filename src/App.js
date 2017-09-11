@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import Navigation from './Components/Navigation/Navigation'
 import PetList from './Components/PetList/PetList'
+import { Route, Link } from 'react-router-dom'
 import './App.css'
-// import { Link } from 'react-router-redux'
-// import { Route, NavLink, Link } from 'react-router-dom'
 
 export default class App extends Component {
 
@@ -12,11 +10,24 @@ export default class App extends Component {
     return (
       <div className="main">
         <header className="header">
-          <Navigation />
+        <div className='navigation-container'>
+          <Link className='nav-link' to='/'><h1>Furever<span> Friends</span></h1></Link>
+
+          <div className='navigations'>
+            <Link className='nav-link' to='/dogs'><h3>Dogs</h3></Link>
+            <Link className='nav-link' to='/cats'><h3>Cats</h3></Link>
+            <Link className='nav-link' to='/allpets'><h3>All Pets</h3></Link>
+          </div>
+        </div>
+
 
         </header>
         <section className="body-container">
-          <PetList />
+          <Route exact path='/' component={ PetList }/>
+          <Route exact path='/dogs' component={ PetList }/>
+          <Route exact path='/cats' component={ PetList }/>
+          <Route exact path='/allpets' component={ PetList }/>
+
         </section>
       </div>
     )
