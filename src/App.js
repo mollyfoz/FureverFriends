@@ -16,7 +16,7 @@ export default class App extends Component {
           <div className='navigations'>
             <Link className='nav-link' to='/dogs'><h3>Dogs</h3></Link>
             <Link className='nav-link' to='/cats'><h3>Cats</h3></Link>
-            <Link className='nav-link' to='/allpets'><h3>All Pets</h3></Link>
+            <Link className='nav-link' to='/favorites'><h3>Favorites</h3></Link>
           </div>
         </div>
 
@@ -24,9 +24,9 @@ export default class App extends Component {
         </header>
         <section className="body-container">
           <Route exact path='/' component={ PetList }/>
-          <Route exact path='/dogs' component={ PetList }/>
-          <Route exact path='/cats' component={ PetList }/>
-          <Route exact path='/allpets' component={ PetList }/>
+          <Route exact path='/dogs' render={ () => <PetList dogs={true}/> }/>
+          <Route exact path='/cats' render={ () => <PetList cats={true}/>}/>
+          <Route exact path='/favorites' render={ () => <PetList favorites={true}/>}/>
 
         </section>
       </div>

@@ -1,7 +1,7 @@
-export const fetchPets = (state = [], action) => {
+export const fetchDogs = (state = [], action) => {
   switch (action.type) {
-    case 'FETCH_SUCCESS':
-      return action.pets
+    case 'FETCH_DOG_SUCCESS':
+      return action.dogs
 
     default:
       return state;

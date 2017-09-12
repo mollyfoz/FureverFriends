@@ -1,10 +1,13 @@
 import React from 'react'
 import './Pet.css'
 
-export const Pet = ({ petDetails, visitProfile }) => {
+export const Pet = ({ petDetails, visitProfile, dogEarPet }) => {
 
   return (
     <div className='card-container'>
+        <div className='button-div'>
+          <button className='dog-ear-btn' type='button' onClick={ () => dogEarPet(petDetails) }></button>
+        </div>
         <div className='image'>
         <img src="http://placekitten.com/175/150" alt="kitty" />
         </div>
