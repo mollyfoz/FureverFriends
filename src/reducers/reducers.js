@@ -7,3 +7,13 @@ export const fetchPets = (state = [], action) => {
       return state;
   }
 }
+
+export const fetchCats = (state = [], action) => {
+  switch (action.type) {
+    case 'FETCH_CAT_SUCCESS':
+      return action.cats
+
+    default:
+      return state;
+  }
+}
