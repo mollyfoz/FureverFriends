@@ -6,8 +6,10 @@
 
 .pet-list-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 40px 0;
+  height: 100vh;
+  overflow: scroll;
 }

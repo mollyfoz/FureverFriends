@@ -1,19 +1,19 @@
-export const fetchPets = (pets) => {
+export const fetchDogs = (dogs) => {
     return {
-        type: 'FETCH_SUCCESS',
-        pets
+        type: 'FETCH_DOG_SUCCESS',
+        dogs
     }
 }
 
 const proxyURL = 'https://cors-anywhere.herokuapp.com/'
 
-export const fetchPetData = (url) => {
+export const fetchDogData = (url) => {
   return (dispatch) => {
     fetch(proxyURL + url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
       .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } )))
-      .then(pets => dispatch(fetchPets(pets)))
+      .then(pets => dispatch(fetchDogs(pets)))
       .then(results => console.log(results))
       .catch(error => console.log('ERROR ', error))
   }

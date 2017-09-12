@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
-import { fetchPetData, fetchCatData } from '../actions/index'
+import { fetchDogData, fetchCatData } from '../actions/index'
 
 const mapStateToProps = (store) => {
   return {
-    pets: store.fetchPets,
+    dogs: store.fetchDogs,
     cats: store.fetchCats
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPetData: (url) => dispatch(fetchPetData(url)),
+    fetchDogData: (url) => dispatch(fetchDogData(url)),
     fetchCatData: (url) => dispatch(fetchCatData(url))
   }
 }

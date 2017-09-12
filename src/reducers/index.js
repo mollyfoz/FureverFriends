@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { fetchPets, fetchCats } from './reducers'
+import { fetchDogs, fetchCats } from './reducers'
 
 const rootReducer = combineReducers({
-  fetchPets,
+  fetchDogs,
   fetchCats
 })
 
