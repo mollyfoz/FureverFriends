@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import { fetchDogs, fetchCats } from './reducers'
+import { fetchDogs, fetchCats, fetchRandom } from './reducers'
 
 const rootReducer = combineReducers({
   fetchDogs,
-  fetchCats
+  fetchCats,
+  fetchRandom
 })
 
 export default rootReducer

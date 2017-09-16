@@ -5,16 +5,13 @@ export const fetchDogs = (dogs) => {
     }
 }
 
-const proxyURL = 'https://cors-anywhere.herokuapp.com/'
-
 export const fetchDogData = (url) => {
   return (dispatch) => {
-    fetch(proxyURL + url)
+    fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
       .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } )))
       .then(pets => dispatch(fetchDogs(pets)))
-      .then(results => console.log(results))
       .catch(error => console.log('ERROR ', error))
   }
 }
@@ -28,12 +25,29 @@ export const fetchCats = (cats) => {
 
 export const fetchCatData = (url) => {
   return (dispatch) => {
-    fetch(proxyURL + url)
+    fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
       .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } )))
       .then(pets => dispatch(fetchCats(pets)))
-      .then(results => console.log(results))
+      .catch(error => console.log('ERROR ', error))
+  }
+}
+
+export const fetchRandom = (pet) => {
+  return {
+    type: 'FETCH_RANDOM',
+    pet
+  }
+}
+
+export const fetchRandomPet = (url) => {
+  return (dispatch) => {
+    fetch(url)
+      .then(response => response.json())
+      .then(object => object.petfinder.pet)
+      .then(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } ))
+      .then(pet => dispatch(fetchRandom(pet)))
       .catch(error => console.log('ERROR ', error))
   }
 }
