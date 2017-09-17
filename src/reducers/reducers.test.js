@@ -1,21 +1,47 @@
 import React from 'react'
-import { fetchPets } from './reducers'
-import pet from '../mockdata/mockPetData'
+import { fetchDogs, fetchCats, fetchRandom } from './reducers'
+import { pet } from '../mockdata/mockPetData'
 
 
-describe('actions reducer', () => {
+describe('actions reducers', () => {
 
-  const action = {
-    type: 'FETCH_SUCCESS',
+  const dogAction = {
+    type: 'FETCH_DOG_SUCCESS',
     data: pet
   }
 
-  it('should return the initial state for pets', () => {
-  expect(fetchPets(undefined, {}) ).toEqual([])
+  it('should return the initial state for dogs', () => {
+  expect(fetchDogs(undefined, {}) ).toEqual([])
   })
 
-  it('pet state should return an array of pet objects', () => {
-    expect(fetchPets(action.data, action.type)).toEqual(action.data)
+  it('dog state should return an array of dog objects', () => {
+    expect(fetchDogs(dogAction.data, dogAction.type)).toEqual(dogAction.data)
+  })
+
+  const catAction = {
+    type: 'FETCH_CAT_SUCCESS',
+    data: pet
+  }
+
+  it('should return the initial state for cats', () => {
+  expect(fetchCats([], {}) ).toEqual([])
+  })
+
+  it('cat state should return an array of cat objects', () => {
+    expect(fetchCats(catAction.data, catAction.type)).toEqual(catAction.data)
+  })
+
+  const randomAction = {
+    type: 'FETCH_RANDOM',
+    data: pet
+  }
+
+  it('should return the initial state for random pet', () => {
+  expect(fetchRandom(undefined, {}) ).toEqual({})
+  })
+
+  it('pet state should return a pet object', () => {
+    expect(fetchRandom(randomAction.data, randomAction.type)).toEqual(randomAction.data)
   })
 
 })

@@ -18,7 +18,7 @@ export class App extends Component {
       <div className="main">
 
         <section className='search-container'>
-          <Search fireSearch={this.props.fireSearch}/>
+          <Search fireSearch={this.props.fireSearch} featured={this.props.hideFeature}/>
         </section>
 
         <header className="header">

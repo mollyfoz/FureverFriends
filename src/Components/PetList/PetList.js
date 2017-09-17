@@ -17,10 +17,10 @@ export class PetList extends Component {
 
   render() {
 
-    const { dogs, cats, random } = this.props
+    const { dogs, cats, random, featured } = this.props
     const merged = [...dogs, ...cats]
 
-    const randomPet = <Pet petDetails={ random } favorite={ this.favorite } featured={true}/>
+    const randomPet = <Pet petDetails={ random } favorite={ this.favorite } featured={ true }/>
 
     const allAnimals = merged.map((animal, i) => <Pet key={ i }
                                                       petDetails={ animal }
