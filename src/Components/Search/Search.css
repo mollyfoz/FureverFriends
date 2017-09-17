@@ -1,5 +1,36 @@
 .search {
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 24px;
+  align-items: center;
+  height: 10px;
+}
+
+.search p {
+  margin-right: 10px;
+}
+
+.submit-btn {
+  background-color: #253848;
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+  font-size: 14px;
+  color: #F8FDF8;
+  padding: 6.5px;
+  outline: none;
+  cursor: pointer;
+  height: 25px;
+}
+
+.submit-btn:hover {
+  background-color: #954856;
+}
+
+.input-box {
+  height: 25px;
+  margin: 10px -1px;
+  padding-left: 3px;
+  outline: none;
+  border: none;
 }

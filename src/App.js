@@ -16,6 +16,9 @@ export class App extends Component {
 
     return (
       <div className="main">
+        <section className='search-container'>
+        <Search fireSearch={this.props.fireSearch}/>
+        </section>
         <header className="header">
         <div className='navigation-container'>
           <Link className='nav-link' to='/'><h1>Furever Friends</h1></Link>
@@ -27,14 +30,11 @@ export class App extends Component {
           </div>
         </div>
         </header>
-        <section className='search-container'>
-          <Search fireSearch={this.props.fireSearch}/>
-        </section>
         <section className='body-container'>
         <Switch>
-          <Route exact path='/' component={ PetList }/>
+          <Route exact path='/' render={ () => <PetList /> }/>
           <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
-          <Route exact path='/cats' component={ PetList } />
+          <Route exact path='/cats' render={ () => <PetList cats={true}/> }  />
           <Route exact path='/favorites' render={ () => <PetList favorites={true} />}/>
         </Switch>
         </section>
