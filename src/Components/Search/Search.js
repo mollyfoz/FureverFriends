@@ -30,20 +30,20 @@ class Search extends Component {
 
     return (
       <section className='search'>
-      <p>See adoptable pets near you </p>
-        <input type='number'
-                className='input-box'
-                placeholder='Search By Zip Code'
-                value={this.state.input}
-                onChange={ (e) => this.handleInput(e) }
-                />
-        <input type='submit'
-                className='submit-btn'
-                name='Search'
-                onClick={ (e) => {
-                e.preventDefault()
-                this.fireSearch(this.state.input)}}
-                />
+        <p>See adoptable pets near you </p>
+          <input type='number'
+                 className='input-box'
+                 placeholder='Search By Zip Code'
+                 value={this.state.input}
+                 onChange={ (e) => this.handleInput(e) }
+          />
+          <input type='submit'
+                 className='submit-btn'
+                 name='Search'
+                 onClick={ (e) => {
+                  e.preventDefault()
+                  this.fireSearch(this.state.input)}}
+          />
       </section>
     )
   }

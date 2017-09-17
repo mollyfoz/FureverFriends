@@ -16,27 +16,30 @@ export class App extends Component {
 
     return (
       <div className="main">
-        <section className='search-container'>
-        <Search fireSearch={this.props.fireSearch}/>
-        </section>
-        <header className="header">
-        <div className='navigation-container'>
-          <Link className='nav-link' to='/'><h1>Furever Friends</h1></Link>
 
-          <div className='navigations'>
-            <Link className='nav-link' to='/dogs'><h3>Dogs</h3></Link>
-            <Link className='nav-link' to='/cats'><h3>Cats</h3></Link>
-            <Link className='nav-link' to='/favorites'><h3>Favorites</h3></Link>
+        <section className='search-container'>
+          <Search fireSearch={this.props.fireSearch}/>
+        </section>
+
+        <header className="header">
+          <div className='navigation-container'>
+            <Link className='nav-link' to='/'><h1>Furever Friends</h1></Link>
+
+            <div className='navigations'>
+              <Link className='nav-link' to='/dogs'><h3>Dogs</h3></Link>
+              <Link className='nav-link' to='/cats'><h3>Cats</h3></Link>
+              <Link className='nav-link' to='/favorites'><h3>Favorites</h3></Link>
+            </div>
           </div>
-        </div>
         </header>
+
         <section className='body-container'>
-        <Switch>
-          <Route exact path='/' render={ () => <PetList /> }/>
-          <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
-          <Route exact path='/cats' render={ () => <PetList cats={true}/> }  />
-          <Route exact path='/favorites' render={ () => <PetList favorites={true} />}/>
-        </Switch>
+          <Switch>
+            <Route exact path='/' render={ () => <PetList /> }/>
+            <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
+            <Route exact path='/cats' render={ () => <PetList cats={true}/> }  />
+            <Route exact path='/favorites' render={ () => <PetList favorites={true} />}/>
+          </Switch>
         </section>
       </div>
     )

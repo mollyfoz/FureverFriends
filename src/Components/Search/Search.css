@@ -1,9 +1,9 @@
 .search {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   font-size: 24px;
-  align-items: center;
+  justify-content: center;
   height: 10px;
 }
 
@@ -13,13 +13,13 @@
 
 .submit-btn {
   background-color: #253848;
-  font-family: 'Josefin Sans', sans-serif;
   border: none;
-  font-size: 14px;
   color: #F8FDF8;
-  padding: 6.5px;
-  outline: none;
   cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  outline: none;
+  padding: 6.5px;
   height: 25px;
 }
 
@@ -28,9 +28,9 @@
 }
 
 .input-box {
-  height: 25px;
-  margin: 10px -1px;
-  padding-left: 3px;
-  outline: none;
   border: none;
+  margin: 10px -1px;
+  outline: none;
+  padding-left: 3px;
+  height: 25px;
 }
