@@ -17,9 +17,6 @@ export class App extends Component {
     return (
       <div className="main">
 
-        <section className='search-container'>
-          <Search fireSearch={this.props.fireSearch} featured={this.props.hideFeature}/>
-        </section>
 
         <header className="header">
           <div className='navigation-container'>
@@ -32,6 +29,10 @@ export class App extends Component {
             </div>
           </div>
         </header>
+
+        <section className='search-container'>
+          <Search fireSearch={this.props.fireSearch} />
+        </section>
 
         <section className='body-container'>
           <Switch>

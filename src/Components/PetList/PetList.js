@@ -5,9 +5,16 @@ import './PetList.css'
 
 export class PetList extends Component {
 
-  favorite(props) {
-    console.log('clicked', props)
-
+  checkFaves(props) {
+    if (props.favorite) {
+      this.props.removeFavorites(props.id)
+      console.log('removing ', props);
+      props.favorite = false
+    } else {
+      this.props.addFavorites(props)
+      console.log('adding ', props);
+      props.favorite = true
+    }
   }
 
   //check arrays
@@ -17,14 +24,13 @@ export class PetList extends Component {
 
   render() {
 
-    const { dogs, cats, random, featured } = this.props
+    const { dogs, cats, random } = this.props
+
     const merged = [...dogs, ...cats]
 
-    const randomPet = <Pet petDetails={ random } favorite={ this.favorite } featured={ true }/>
+    const randomPet = <Pet petDetails={ random } checkFaves={ this.checkFaves.bind(this) } />
 
-    const allAnimals = merged.map((animal, i) => <Pet key={ i }
-                                                      petDetails={ animal }
-                                                      favorite={ this.favorite }/> )
+    const allAnimals = merged.map((animal, i) => <Pet key={ i } petDetails={ animal } checkFaves={ this.checkFaves.bind(this) }/> )
 
     return (
       <div className='pet-list-container'>
