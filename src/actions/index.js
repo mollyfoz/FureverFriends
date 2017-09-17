@@ -42,7 +42,8 @@ export const fetchCatData = (url) => {
                             type: pet.animal.$t,
                             gender: pet.sex.$t,
                             desc: pet.description.$t,
-                            id: pet.id.$t
+                            id: pet.id.$t,
+                            image: pet.media.photos.photo[2]['$t']
                           } )))
       .then(pets => dispatch(fetchCats(pets)))
       .catch(error => console.log('ERROR ', error))
@@ -65,12 +66,27 @@ export const fetchRandomPet = (url) => {
                     name: pet.name.$t,
                     age: pet.age.$t,
                     type: pet.animal.$t,
-                    gender: pet.sex.$t, 
+                    gender: pet.sex.$t,
                     desc: pet.description.$t,
                     id: pet.id.$t,
-                    image: pet.media.photos.photo[2]['$t']
+                    image: pet.media.photos.photo[2]['$t'],
+                    featured: true
                   } ))
       .then(pet => dispatch(fetchRandom(pet)))
       .catch(error => console.log('ERROR ', error))
+  }
+}
+
+export const addFavorites = (fave) => {
+  return {
+    type: 'ADD_FAVORITES',
+    fave
+  }
+}
+
+export const removeFavorites = (fave) => {
+  return {
+    type: 'REMOVE-FAVORITES',
+    fave
   }
 }

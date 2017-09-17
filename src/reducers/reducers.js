@@ -4,7 +4,7 @@ export const fetchDogs = (state = [], action) => {
       return action.dogs
 
     default:
-      return state;
+      return state
   }
 }
 
@@ -14,7 +14,7 @@ export const fetchCats = (state = [], action) => {
       return action.cats
 
     default:
-      return state;
+      return state
   }
 }
 
@@ -24,6 +24,20 @@ export const fetchRandom = (state = {}, action) => {
       return action.pet
 
     default:
-      return state;
+      return state
+  }
+}
+
+export const handleFavorites = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_FAVORITES':
+      return [...state, Object.assign({}, action.fave, { favorite: true })]
+
+    case 'REMOVE-FAVORITES':
+    console.log(action);
+      return state.filter(fave => fave.id !== action.fave)
+
+    default:
+      return state
   }
 }

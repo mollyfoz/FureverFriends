@@ -16,26 +16,30 @@ class Search extends Component {
   }
 
   fireSearch(zip) {
-    this.hideFeature()
     this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=100&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
     this.props.fetchCatData(`https://api.petfinder.com/pet.find?location=${zip}&animal=cat&age=senior&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
+    this.setState({ input: '' })
+    // this.hideFeature()
   }
 
-  hideFeature() {
-    return this.props.featured ? false : true
-  }
+  // hideFeature() {
+  //   console.log('hide feature: ', this.props)
+  //   return this.props.random.featured ? Object.assign(this.props.random, { featured: false }) : null
+  // }
 
   // promiseFetch(zip) {
-
-    // return Promise.all([catFetch, dogFetch])
-
+  //   const dogFetch = this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=100&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
+  //   const catFetch = this.props.fetchCatData(`https://api.petfinder.com/pet.find?location=${zip}&animal=cat&age=senior&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
+  //
+  //   return Promise.all([catFetch, dogFetch])
+  //
   // }
 
   render() {
 
     return (
       <section className='search'>
-        <p>See adoptable pets near you </p>
+        <p>See adoptable pets near you</p>
           <input type='number'
                  className='input-box'
                  placeholder='Search By Zip Code'
@@ -47,7 +51,7 @@ class Search extends Component {
                  name='Search'
                  onClick={ (e) => {
                   e.preventDefault()
-                  this.fireSearch(this.state.input)}}
+                  this.fireSearch(this.state.input) } }
           />
       </section>
     )
