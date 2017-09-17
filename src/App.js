@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 import PetList from './Components/PetList/PetList'
-import { Route, Link } from 'react-router-dom'
+import Search from './Components/Search/Search'
+import PetListContainer from './containers/PetListContainer'
+import { Switch, Route, Link } from 'react-router-dom'
 import './App.css'
 
-export default class App extends Component {
+
+export class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=dog&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
+  }
 
   render() {
 
@@ -11,7 +18,7 @@ export default class App extends Component {
       <div className="main">
         <header className="header">
         <div className='navigation-container'>
-          <Link className='nav-link' to='/'><h1>Furever<span> Friends</span></h1></Link>
+          <Link className='nav-link' to='/'><h1>Furever Friends</h1></Link>
 
           <div className='navigations'>
             <Link className='nav-link' to='/dogs'><h3>Dogs</h3></Link>
@@ -19,17 +26,21 @@ export default class App extends Component {
             <Link className='nav-link' to='/favorites'><h3>Favorites</h3></Link>
           </div>
         </div>
-
-
         </header>
-        <section className="body-container">
+        <section className='search-container'>
+          <Search fireSearch={this.props.fireSearch}/>
+        </section>
+        <section className='body-container'>
+        <Switch>
           <Route exact path='/' component={ PetList }/>
-          <Route exact path='/dogs' render={ () => <PetList dogs={true}/> }/>
-          <Route exact path='/cats' render={ () => <PetList cats={true}/>}/>
-          <Route exact path='/favorites' render={ () => <PetList favorites={true}/>}/>
-
+          <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
+          <Route exact path='/cats' component={ PetList } />
+          <Route exact path='/favorites' render={ () => <PetList favorites={true} />}/>
+        </Switch>
         </section>
       </div>
     )
   }
 }
+
+export default PetListContainer(App)

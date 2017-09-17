@@ -17,3 +17,13 @@ export const fetchCats = (state = [], action) => {
       return state;
   }
 }
+
+export const fetchRandom = (state = {}, action) => {
+  switch (action.type) {
+    case 'FETCH_RANDOM':
+      return action.pet
+
+    default:
+      return state;
+  }
+}

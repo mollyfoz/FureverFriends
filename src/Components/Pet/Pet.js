@@ -1,12 +1,12 @@
 import React from 'react'
 import './Pet.css'
 
-export const Pet = ({ petDetails, visitProfile, dogEarPet }) => {
+export const Pet = ({ petDetails, favorite }) => {
 
   return (
     <div className='card-container'>
         <div className='button-div'>
-          <button className='dog-ear-btn' type='button' onClick={ () => dogEarPet(petDetails) }></button>
+          <button className='dog-ear-btn' type='button' onClick={ () => favorite(petDetails) }></button>
         </div>
         <div className='image'>
         <img src="http://placekitten.com/175/150" alt="kitty" />
@@ -15,7 +15,7 @@ export const Pet = ({ petDetails, visitProfile, dogEarPet }) => {
           <h4>{ petDetails.name }</h4>
           <p className="pet-info">{ petDetails.age } { petDetails.type }</p>
           <p>{ petDetails.gender }</p>
-          <button type='submit' onClick={ () => visitProfile(petDetails) }>Learn About { petDetails.name }</button>
+          <p className='pet-description'>{ petDetails.desc }</p>
         </div>
     </div>
   )
