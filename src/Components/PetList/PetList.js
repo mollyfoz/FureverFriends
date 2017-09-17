@@ -5,6 +5,7 @@ import './PetList.css'
 
 export class PetList extends Component {
 
+
   favorite(props) {
     console.log('clicked', props)
 
@@ -14,7 +15,9 @@ export class PetList extends Component {
 
     const { dogs, cats, random } = this.props
     const merged = [...dogs, ...cats]
-    const randomPet = <Pet petDetails={ random } favorite={ this.favorite } />
+
+    const randomPet = <Pet petDetails={ random } favorite={ this.favorite } featured={true}/>
+
     const allAnimals = merged.map((animal, i) => <Pet key={ i } petDetails={ animal } favorite={ this.favorite }/> )
 
     return (

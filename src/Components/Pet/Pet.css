@@ -5,8 +5,8 @@
 }
 
 .card-container {
-  width: 380px;
-  height: 275px;
+  width: 300px;
+  height: 355px;
   background-color: #F8FDF8;
   color: #954856;
   margin: 10px;
@@ -16,23 +16,36 @@
   box-shadow: 1px 1px 0 0 #253848;
 }
 
-.pet-info {
-  color: #954856;
+.pet-details {
+  background-color: #253848;
+  opacity: 0.8;
+  z-index: 1;
+  color: #F8FDF8;
   font-size: 16px;
   padding: 5px 0;
+  position: relative;
+  bottom: 55px;
+  width: 200px;
+  left: 40px;
 }
 
-.pet-desc {
+.pet-description {
+  /*display: none;*/
+  width: 260px;
+  height: 100px;
   font-size: 14px;
   text-align: left;
+  font-family: 'Josefin Sans', sans-serif;
+  overflow: scroll;
+  line-height: 1.2;
+  position: relative;
+  bottom: 45px;
+  padding: 10px;
 }
 
-.image {
-  width: 175px;
-  height: 150px;
-  background-color: #ABA62F;
-  border-radius: 4px;
-  margin: 0 auto;
+.featured {
+  text-align: center;
+  margin-left: 75px;
 }
 
 button {
@@ -66,4 +79,10 @@ button .dog-ear-btn {
 
 button .dog-ear-btn:hover {
   background-color: #ABA62F;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  z-index: -1;
 }

@@ -10,7 +10,7 @@ export const fetchDogData = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
-      .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } )))
+      .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t, image: pet.media.photos.photo[2]['$t'] } )))
       .then(pets => dispatch(fetchDogs(pets)))
       .catch(error => console.log('ERROR ', error))
   }
@@ -28,7 +28,7 @@ export const fetchCatData = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
-      .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } )))
+      .then(result => result.map(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t, image: pet.media.photos.photo[2]['$t'] } )))
       .then(pets => dispatch(fetchCats(pets)))
       .catch(error => console.log('ERROR ', error))
   }
@@ -46,7 +46,7 @@ export const fetchRandomPet = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pet)
-      .then(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t } ))
+      .then(pet => Object.assign({}, { name: pet.name.$t, age: pet.age.$t, type: pet.animal.$t, gender: pet.sex.$t, desc: pet.description.$t, id: pet.id.$t, image: pet.media.photos.photo[2]['$t'] } ))
       .then(pet => dispatch(fetchRandom(pet)))
       .catch(error => console.log('ERROR ', error))
   }

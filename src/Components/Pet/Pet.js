@@ -1,22 +1,27 @@
 import React from 'react'
 import './Pet.css'
 
-export const Pet = ({ petDetails, favorite }) => {
+export const Pet = ({ petDetails, favorite, featured }) => {
 
   return (
     <div className='card-container'>
         <div className='button-div'>
           <button className='dog-ear-btn' type='button' onClick={ () => favorite(petDetails) }></button>
+          {
+            (featured) && <p className='featured'>Featured Pet</p>
+          }
         </div>
         <div className='image'>
-        <img src="http://placekitten.com/175/150" alt="kitty" />
+        <img src={ petDetails.image } alt='pet' />
         </div>
         <div className="pet-details">
-          <h4>{ petDetails.name }</h4>
+          <h4>{ petDetails.name } ( { petDetails.gender })</h4>
           <p className="pet-info">{ petDetails.age } { petDetails.type }</p>
-          <p>{ petDetails.gender }</p>
-          <p className='pet-description'>{ petDetails.desc }</p>
         </div>
+        <p className='pet-description'>{ petDetails.desc }</p>
     </div>
   )
 }
+
+
+// <p>{ petDetails.gender }</p>
