@@ -5,11 +5,15 @@ import './PetList.css'
 
 export class PetList extends Component {
 
-
   favorite(props) {
     console.log('clicked', props)
 
   }
+
+  //check arrays
+  //set props
+  //use a ternary to decide which one has been chosen
+  //use that to filter through and append the correct shit
 
   render() {
 
@@ -18,7 +22,9 @@ export class PetList extends Component {
 
     const randomPet = <Pet petDetails={ random } favorite={ this.favorite } featured={true}/>
 
-    const allAnimals = merged.map((animal, i) => <Pet key={ i } petDetails={ animal } favorite={ this.favorite }/> )
+    const allAnimals = merged.map((animal, i) => <Pet key={ i }
+                                                      petDetails={ animal }
+                                                      favorite={ this.favorite }/> )
 
     return (
       <div className='pet-list-container'>
