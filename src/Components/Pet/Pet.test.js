@@ -33,7 +33,7 @@ describe('Pet component', () => {
   it.skip('should call favorite on button click', () => {
 
       const mockFn = jest.fn()
-      const comp = mount(<Pet petDetails={pet}  favorite={false}/>)
+      const comp = mount(<Pet petDetails={pet}  favorite={false} toggleFaves={mockFn} featured={false}/>)
       const favorited = comp.find('.dog-ear-btn')
 
         favorited.simulate('click', { favorite : true });

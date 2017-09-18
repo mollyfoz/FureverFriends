@@ -16,4 +16,8 @@ describe('PetList component', () => {
    expect(wrapper).toBeDefined()
  })
 
+ it.skip('should render container for pet cards', () => {
+   expect(wrapper.find('.pet-list-container').length).toEqual(2)
+ })
+
 })
