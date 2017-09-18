@@ -77,12 +77,11 @@ svg {
   position: relative;
   left: -17px;
   top: -17px;
-  opacity: .8;
+  opacity: 1;
 }
 
 svg:hover {
   fill: #fff;
-  opacity: 1;
 }
 
 button .dog-ear-btn {

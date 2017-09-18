@@ -30,7 +30,8 @@ h1 {
   color: #253848;
   font-size: 55px;
   font-weight: bold;
-  margin: 0 28px 0 0 ;
+  margin-right: 20px;
+  text-align: right;
 }
 
 span {
@@ -43,8 +44,9 @@ span {
   display: flex;
   flex-direction: row;
   font-size: 35px;
-  justify-content: space-around;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  margin: 10px 20px;
+  text-align: right;
   width: 45%;
 }
 

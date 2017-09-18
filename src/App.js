@@ -2,22 +2,33 @@ import React, { Component } from 'react'
 import PetList from './Components/PetList/PetList'
 import Search from './Components/Search/Search'
 import PetListContainer from './containers/PetListContainer'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import './App.css'
 
 
 export class App extends Component {
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     activePage: 5
+  //   }
+  // }
+
 
   componentDidMount() {
     this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=dog&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
+    console.log('app props ', this.props)
   }
+
+ //  handlePageChange(pageNumber) {
+ //   console.log(`active page is ${pageNumber}`)
+ //   this.setState({ activePage: pageNumber})
+ // }
 
   render() {
 
     return (
       <div className="main">
-
-
         <header className="header">
           <div className='navigation-container'>
             <Link className='nav-link' to='/'><h1>Furever Friends</h1></Link>
@@ -35,12 +46,12 @@ export class App extends Component {
         </section>
 
         <section className='body-container'>
-          <Switch>
-            <Route exact path='/' render={ () => <PetList /> }/>
+
+            <Route exact path='/' component={ PetList }/>
             <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
             <Route exact path='/cats' render={ () => <PetList cats={true}/> }  />
-            <Route exact path='/favorites' render={ () => <PetList favorites={true} />}/>
-          </Switch>
+            <Route exact path='/favorites' render={ () => <PetList fave={true} /> }/>
+
         </section>
       </div>
     )

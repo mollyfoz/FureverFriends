@@ -31,10 +31,10 @@ export const fetchRandom = (state = {}, action) => {
 export const handleFavorites = (state = [], action) => {
   switch (action.type) {
     case 'ADD_FAVORITES':
+    console.log(this.props);
       return [...state, Object.assign({}, action.fave, { favorite: true })]
 
-    case 'REMOVE-FAVORITES':
-    console.log(action);
+    case 'REMOVE_FAVORITES':
       return state.filter(fave => fave.id !== action.fave)
 
     default:

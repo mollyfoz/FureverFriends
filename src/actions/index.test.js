@@ -32,4 +32,22 @@ describe('Actions', () => {
     expect(actions.fetchRandom(data)).toEqual(expectedAction)
   })
 
+  it('should create an action to add a pet to faves', () => {
+    const data = pet
+    const expectedAction = {
+      type: 'ADD_FAVORITES',
+      data
+    }
+    expect(actions.addFavorites(data)).toEqual(expectedAction)
+  })
+
+  it('should create an action to remove a pet from faves', () => {
+    const data = pet
+    const expectedAction = {
+      type: 'REMOVE_FAVORITES',
+      data
+    }
+    expect(actions.removeFavorites(data)).toEqual(expectedAction)
+  })
+
 })

@@ -15,31 +15,27 @@ class Search extends Component {
     this.setState({ input: e.target.value })
   }
 
-  fireSearch(zip) {
-    this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=100&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
-    this.props.fetchCatData(`https://api.petfinder.com/pet.find?location=${zip}&animal=cat&age=senior&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
-    this.setState({ input: '' })
-    // this.hideFeature()
+  handleEnter(e) {
+    e.preventDefault()
   }
 
-  // hideFeature() {
-  //   console.log('hide feature: ', this.props)
-  //   return this.props.random.featured ? Object.assign(this.props.random, { featured: false }) : null
-  // }
+  fireSearch(zip) {
+    this.promiseFetch(zip)
+    this.setState({ input: '' })
+  }
 
-  // promiseFetch(zip) {
-  //   const dogFetch = this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=100&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
-  //   const catFetch = this.props.fetchCatData(`https://api.petfinder.com/pet.find?location=${zip}&animal=cat&age=senior&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
-  //
-  //   return Promise.all([catFetch, dogFetch])
-  //
-  // }
+  promiseFetch(zip) {
+    const dogFetch =  this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=100&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
+    const catFetch = this.props.fetchCatData(`https://api.petfinder.com/pet.find?location=${zip}&animal=cat&age=senior&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
+    return Promise.all([catFetch, dogFetch])
+  }
 
   render() {
 
     return (
       <section className='search'>
         <p>See adoptable pets near you</p>
+        <form onSubmit={ this.handleEnter }>
           <input type='number'
                  className='input-box'
                  placeholder='Search By Zip Code'
@@ -53,6 +49,7 @@ class Search extends Component {
                   e.preventDefault()
                   this.fireSearch(this.state.input) } }
           />
+        </form>
       </section>
     )
   }
