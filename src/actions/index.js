@@ -69,6 +69,8 @@ export const fetchRandomPet = (url) => {
                     gender: pet.sex.$t,
                     desc: pet.description.$t,
                     id: pet.id.$t,
+                    city: pet.contact.city.$t,
+                    state: pet.contact.state.$t,
                     image: pet.media.photos.photo[2]['$t'],
                     featured: true
                   } ))

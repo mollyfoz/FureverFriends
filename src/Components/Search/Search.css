@@ -17,9 +17,9 @@
   color: #F8FDF8;
   cursor: pointer;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   outline: none;
-  padding: 6.5px;
+  padding: 6.8px 6.5px 6.5px 6.5px;
   height: 25px;
 }
 
@@ -31,7 +31,7 @@
   border: none;
   margin: 10px -1px;
   outline: none;
-  padding-left: 3px;
+  padding: 12px;
   height: 25px;
 }
 
