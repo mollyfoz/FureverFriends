@@ -7,23 +7,10 @@ import './App.css'
 
 
 export class App extends Component {
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     activePage: 5
-  //   }
-  // }
-
 
   componentDidMount() {
     this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=dog&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
-    console.log('app props ', this.props)
   }
-
- //  handlePageChange(pageNumber) {
- //   console.log(`active page is ${pageNumber}`)
- //   this.setState({ activePage: pageNumber})
- // }
 
   render() {
 

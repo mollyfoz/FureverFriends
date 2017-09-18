@@ -6,8 +6,8 @@ import rootReducer from './reducers'
 import App from './App'
 import createHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux'
-import { Router } from 'react-router'
-import { routerMiddleware } from 'react-router-redux'
+// import { Router } from 'react-router'
+import { routerMiddleware, ConnectedRouter } from 'react-router-redux'
 import { createStore, applyMiddleware } from 'redux'
 import './index.css'
 
@@ -20,9 +20,9 @@ const store = createStore(rootReducer, devTools, applyMiddleware(thunk, middlewa
 
 const router = (
   <Provider store={store}>
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <App />
-    </Router>
+    </ConnectedRouter>
   </Provider>
 )
 
