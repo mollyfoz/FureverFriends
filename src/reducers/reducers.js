@@ -31,7 +31,6 @@ export const fetchRandom = (state = {}, action) => {
 export const handleFavorites = (state = [], action) => {
   switch (action.type) {
     case 'ADD_FAVORITES':
-    console.log(this.props);
       return [...state, Object.assign({}, action.fave, { favorite: true })]
 
     case 'REMOVE_FAVORITES':

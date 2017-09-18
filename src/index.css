@@ -12,6 +12,11 @@ body, html {
   text-decoration: none;
 }
 
+.nav-link:hover {
+  color: #954856;
+  text-decoration: underline;
+}
+
 .navigation-container {
   align-items: flex-end;
   background-color: #F8FDF8;

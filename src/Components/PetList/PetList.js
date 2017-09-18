@@ -5,7 +5,7 @@ import './PetList.css'
 
 export class PetList extends Component {
 
-  checkFaves(props) {
+  toggleFaves(props) {
     if (props.favorite) {
       this.props.removeFavorites(props.id)
       props.favorite = false
@@ -23,7 +23,7 @@ export class PetList extends Component {
   //   } else {
   //     <PetList fave={this.props.fave}
   //   }
-  //   <PetList /> 
+  //   <PetList />
   // }
 
   //check arrays
@@ -32,15 +32,14 @@ export class PetList extends Component {
   //use that to filter through and append the correct shit
 
   render() {
-    console.log('petlist props ',this.props)
 
     const { dogs, cats, random, handleFavorite } = this.props
     const merged = [...dogs, ...cats]
 
-    const randomPet = <Pet petDetails={ random } checkFaves={ this.checkFaves.bind(this) } favorite={ handleFavorite } />
+    const randomPet = <Pet petDetails={ random } toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorite } featured={true} />
 
     const allAnimals = merged.map((animal, i) => <Pet key={ i } petDetails={ animal }
-    checkFaves={ this.checkFaves.bind(this) } favorite={ handleFavorite } /> )
+    toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorite } /> )
 
     return (
       <div className='pet-list-container'>
