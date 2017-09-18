@@ -31,7 +31,7 @@
 .pet-details {
   background-color: #253848;
   color: #F8FDF8;
-  font-size: 16px;
+  font-size: 24px;
   opacity: 0.8;
   padding: 5px 0;
   position: absolute;
@@ -40,12 +40,6 @@
   z-index: 1;
   width: 300px;
 }
-
-/*.pet-details:hover {
-  background-color: #954856;
-  opacity: 1;
-  cursor: pointer;
-}*/
 
 .pet-description {
   background-color: #fff;
@@ -77,6 +71,11 @@
   opacity: 0.7;
   height: 300px;
   width: 400px;
+}
+
+.featured-title {
+  font-size: 20px;
+  padding: 5px;
 }
 
 .featured-container:hover .featured-desc {

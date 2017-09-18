@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PetList from './Components/PetList/PetList'
 import Search from './Components/Search/Search'
 import PetListContainer from './containers/PetListContainer'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router'
 import './App.css'
 
 
@@ -33,12 +34,12 @@ export class App extends Component {
         </section>
 
         <section className='body-container'>
-
+          <Switch>
             <Route exact path='/' component={ PetList }/>
             <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
             <Route exact path='/cats' render={ () => <PetList cats={true}/> }  />
             <Route exact path='/favorites' render={ () => <PetList fave={true} /> }/>
-
+          </Switch>
         </section>
       </div>
     )

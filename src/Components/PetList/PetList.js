@@ -15,31 +15,15 @@ export class PetList extends Component {
     }
   }
 
-  // renderArrays() {
-  //   if (this.props.dogs) {
-  //     <PetList dogs={this.props.dogs} />
-  //   } else if (this.props.cats) {
-  //     <PetList cats ={this.props.cats}
-  //   } else {
-  //     <PetList fave={this.props.fave}
-  //   }
-  //   <PetList />
-  // }
-
-  //check arrays
-  //set props
-  //use a ternary to decide which one has been chosen
-  //use that to filter through and append the correct shit
-
   render() {
 
-    const { dogs, cats, random, handleFavorite } = this.props
+    const { dogs, cats, random, handleFavorites } = this.props
     const merged = [...dogs, ...cats]
 
-    const randomPet = <Pet petDetails={ random } toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorite } featured={true} />
+    const randomPet = <Pet petDetails={ random } toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorites } featured={true} />
 
     const allAnimals = merged.map((animal, i) => <Pet key={ i } petDetails={ animal }
-    toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorite } /> )
+    toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorites } /> )
 
     return (
       <div className='pet-list-container'>

@@ -7,15 +7,6 @@ body, html {
   height: 100%;
 }
 
-.nav-link {
-  color: #253848;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  color: #954856;
-  text-decoration: underline;
-}
 
 .navigation-container {
   align-items: flex-end;
@@ -32,16 +23,23 @@ body, html {
 }
 
 h1 {
-  color: #253848;
   font-size: 55px;
   font-weight: bold;
   margin-right: 20px;
   text-align: right;
 }
 
-span {
-  font-weight: lighter;
+.nav-link {
+  color: #253848;
+  text-decoration: none;
 }
+
+.nav-link:hover {
+  color: #954856;
+  text-decoration: underline;
+}
+
+
 
 .navigations {
   align-items: flex-end;
