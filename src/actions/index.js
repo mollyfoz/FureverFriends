@@ -86,7 +86,7 @@ export const addFavorites = (fave) => {
 
 export const removeFavorites = (fave) => {
   return {
-    type: 'REMOVE-FAVORITES',
+    type: 'REMOVE_FAVORITES',
     fave
   }
 }

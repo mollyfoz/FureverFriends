@@ -44,4 +44,16 @@ describe('actions reducers', () => {
     expect(fetchRandom(randomAction.data, randomAction.type)).toEqual(randomAction.data)
   })
 
+  const addFavoriteAction = {
+    type: 'ADD_FAVORITES',
+    data: pet
+  }
+
+  it.skip('should return the initial state for favorited pet', () => {
+  expect(handleFavorites(undefined, {}) ).toEqual([])
+  })
+
+  it.skip('pet state should return a pet object', () => {
+    expect(handleFavorites(addFavoriteAction.data, addFavoriteAction.type)).toEqual(addFavoriteAction.data)
+  })
 })

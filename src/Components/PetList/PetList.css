@@ -10,6 +10,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow: scroll;
-  padding: 20px 0;
+  padding: 20px;
   height: 100vh;
 }
