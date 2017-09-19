@@ -1,3 +1,5 @@
+import { cleanData } from '../helper'
+
 export const fetchDogs = (dogs) => {
   return {
     type: 'FETCH_DOG_SUCCESS',
@@ -10,15 +12,7 @@ export const fetchDogData = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
-      .then(result => result.map(pet =>
-        Object.assign({}, { name: pet.name.$t,
-                            age: pet.age.$t,
-                            type: pet.animal.$t,
-                            gender: pet.sex.$t,
-                            desc: pet.description.$t,
-                            id: pet.id.$t,
-                            image: pet.media.photos.photo[2]['$t']
-                          } )))
+      .then(result => cleanData(result))
       .then(pets => dispatch(fetchDogs(pets)))
       .catch(error => console.log('ERROR ', error))
   }
@@ -36,15 +30,7 @@ export const fetchCatData = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pets.pet)
-      .then(result => result.map(pet =>
-        Object.assign({}, { name: pet.name.$t,
-                            age: pet.age.$t,
-                            type: pet.animal.$t,
-                            gender: pet.sex.$t,
-                            desc: pet.description.$t,
-                            id: pet.id.$t,
-                            image: pet.media.photos.photo[2]['$t']
-                          } )))
+      .then(result => cleanData(result))
       .then(pets => dispatch(fetchCats(pets)))
       .catch(error => console.log('ERROR ', error))
   }
