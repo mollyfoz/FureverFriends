@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PetListContainer from '../../containers/PetListContainer'
 import { Pet } from '../Pet/Pet'
-import { Route } from 'react-router-dom'
 import '../PetList/PetList.css'
 
 export class FavoriteList extends Component {
@@ -25,6 +24,9 @@ export class FavoriteList extends Component {
 
     return (
       <div className='pet-list-container'>
+      {
+        (faves.length === 0) && <h1>Add some favorites!</h1>
+      }
         { allFaves }
       </div>
     )

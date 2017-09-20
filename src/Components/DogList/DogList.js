@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PetListContainer from '../../containers/PetListContainer'
 import { Pet } from '../Pet/Pet'
-import { Route } from 'react-router-dom'
 import '../PetList/PetList.css'
 
 export class DogList extends Component {
@@ -25,6 +24,9 @@ export class DogList extends Component {
 
     return (
       <div className='pet-list-container'>
+      {
+        (dogs.length === 0) && <h1>Search to see adoptable dogs!</h1>
+      }
         { allDogs }
       </div>
     )

@@ -6,18 +6,6 @@ import './PetList.css'
 
 export class PetList extends Component {
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props !== nextProps.dogs.type) {
-  //     console.log('dog props', nextProps.dogs);
-  //     return nextProps.dogs.map(dog => console.log(dog))
-  //   } else if (this.props.cats !== nextProps.cats) {
-  //     console.log('cat props', nextProps.cats);
-  //   } else {
-  //     console.log('fave props', nextProps.faves);
-  //   }
-  //     //if they dont equal next props, update
-  // }
-
   toggleFaves(props) {
     if (props.favorite) {
       this.props.removeFavorites(props.id)
@@ -40,9 +28,6 @@ export class PetList extends Component {
 
     return (
       <div className='pet-list-container'>
-      <Route exact path='/dogs' render={() => <p>DOGS</p>} />
-      <Route exact path='/cats' render={() => <p>CATS</p>} />
-      <Route exact path='/favorites' render={() => <p>FAVORITES</p> } />
         { randomPet }
         { allAnimals }
       </div>
