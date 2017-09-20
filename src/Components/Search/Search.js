@@ -35,7 +35,7 @@ class Search extends Component {
     return (
       <section className='search'>
         <p>Search to see adoptable pets near you</p>
-        <form onSubmit={ this.handleEnter }>
+        <form className='form' onSubmit={ this.handleEnter }>
           <input type='number'
                  className='input-box'
                  placeholder='Search By Zip Code'
