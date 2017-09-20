@@ -111,7 +111,7 @@ button {
 }
 
 .svg-inactive {
-  fill: #fff;
+  fill: #F8FDF8;
   position: absolute;
   left: 7px;
   top: 0px;
@@ -131,7 +131,7 @@ button {
 }
 
 .svg-active:hover {
-  fill: #fff;
+  fill: #F8FDF8;
 }
 
 button .dog-ear-btn {
