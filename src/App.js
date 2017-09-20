@@ -13,16 +13,12 @@ export class App extends Component {
     this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=cat&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
   }
 
-  filterData(props) {
-    console.log('props ', this.props);
+  filterData() {
     if (this.props.location.pathname === "/dogs") {
-      console.log('dogs', this.props.dogs);
       return (this.props.dogs)
     } else if (this.props.location.pathname === "/cats") {
-      console.log('cats');
       return (this.props.cats)
     } else if (this.props.location.pathname === "/favorites") {
-      console.log('faves');
       return (this.props.faves)
     }
   }
@@ -52,7 +48,7 @@ export class App extends Component {
         <section className='body-container'>
 
             <Route exact path='/' component={ PetList }/>
-            <Route exact path='/dogs' render={ (props) => <PetList type={ this.filterData(props) } /> } />
+            <Route exact path='/dogs' render={ () => <PetList type={ this.filterData() } /> } />
             <Route exact path='/cats' render={ () => <PetList type={ this.filterData() } /> }  />
             <Route exact path='/favorites' render={ () => <PetList type={ this.filterData() } /> }/>
 

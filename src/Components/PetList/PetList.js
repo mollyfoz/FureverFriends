@@ -7,6 +7,7 @@ import './PetList.css'
 export class PetList extends Component {
 
   toggleFaves(props) {
+    console.log('toggle props ', props);
     if (props.favorite) {
       this.props.removeFavorites(props.id)
       props.favorite = false
@@ -17,14 +18,14 @@ export class PetList extends Component {
   }
 
   render() {
-
-    const { dogs, cats, random, handleFavorites } = this.props
+    console.log('list props', this.props);
+    const { dogs, cats, random } = this.props
     const merged = [...dogs, ...cats]
 
-    const randomPet = <Pet petDetails={ random } toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorites } featured={ true } />
+    const randomPet = <Pet petDetails={ random } toggleFaves={ this.toggleFaves.bind(this) } featured={ true } />
 
     const allAnimals = merged.map((animal, i) => <Pet key={ i } petDetails={ animal }
-    toggleFaves={ this.toggleFaves.bind(this) } favorite={ handleFavorites } /> )
+    toggleFaves={ this.toggleFaves.bind(this) } /> )
 
     return (
       <div className='pet-list-container'>
