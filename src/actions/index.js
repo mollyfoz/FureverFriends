@@ -1,4 +1,4 @@
-import { cleanData } from '../helper'
+import { cleanData, cleanRandomData } from '../helper'
 
 export const fetchDogs = (dogs) => {
   return {
@@ -48,18 +48,7 @@ export const fetchRandomPet = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(object => object.petfinder.pet)
-      .then(pet => Object.assign({}, {
-                    name: pet.name.$t,
-                    age: pet.age.$t,
-                    type: pet.animal.$t,
-                    gender: pet.sex.$t,
-                    desc: pet.description.$t,
-                    id: pet.id.$t,
-                    city: pet.contact.city.$t,
-                    state: pet.contact.state.$t,
-                    image: pet.media.photos.photo[2]['$t'],
-                    featured: true
-                  } ))
+      .then(pet => cleanRandomData(pet))
       .then(pet => dispatch(fetchRandom(pet)))
       .catch(error => console.log('ERROR ', error))
   }

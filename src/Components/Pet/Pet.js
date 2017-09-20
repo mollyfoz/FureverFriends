@@ -18,11 +18,12 @@ export const Pet = ({ petDetails, toggleFaves, featured }) => {
       <div className='image'>
         <img src={ petDetails.image } alt='pet' />
       </div>
-      <div className="pet-details">
+      <div className='pet-details'>
         <h4>{ petDetails.name } ({ petDetails.gender })</h4>
-        <p className="pet-info">{ petDetails.age } { petDetails.type }</p>
+        <p className='pet-info'>{ petDetails.age } { petDetails.type }</p>
       </div>
       <div className='pet-description'>
+        <h3>{"I'm in " }{ petDetails.city }, { petDetails.state } </h3>
         <p>{ petDetails.desc }</p>
       </div>
       {
