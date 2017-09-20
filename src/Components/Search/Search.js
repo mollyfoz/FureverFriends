@@ -25,7 +25,7 @@ class Search extends Component {
   }
 
   promiseFetch(zip) {
-    const dogFetch =  this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=100&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
+    const dogFetch =  this.props.fetchDogData(`https://api.petfinder.com/pet.find?location=${zip}&animal=dog&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
     const catFetch = this.props.fetchCatData(`https://api.petfinder.com/pet.find?location=${zip}&animal=cat&count=25&key=8ff0079b584547c25b3295dd09e2e6af&format=json`)
     return Promise.all([catFetch, dogFetch])
   }
@@ -34,7 +34,7 @@ class Search extends Component {
 
     return (
       <section className='search'>
-        <p>See adoptable pets near you</p>
+        <p>Search to see adoptable pets near you</p>
         <form onSubmit={ this.handleEnter }>
           <input type='number'
                  className='input-box'
