@@ -17,14 +17,15 @@
 }
 
 .featured-container {
-  color: #954856;
+  background-color: #253848;
+  color: #fff;
   cursor: pointer;
   font-size: 24px;
-  margin: 5px 35px 5px 0;
+  margin: 5px 35px 35px 0;
   padding: 10px;
   text-align: center;
-  height: 300px;
-  width: 300px;
+  height: 309px;
+  width: 100%;
   position: relative;
 }
 
@@ -32,13 +33,12 @@
   background-color: #253848;
   color: #F8FDF8;
   font-size: 24px;
-  opacity: 0.8;
   padding: 5px 0;
   position: absolute;
-  bottom: -10px;
-  left: 10px;
+  bottom: 0px;
+  left: 9.5px;
   z-index: 1;
-  width: 300px;
+  width: 300.5px;
 }
 
 .pet-description {
@@ -58,37 +58,26 @@
 }
 
 .featured-desc {
-  background-color: #fff;
-  display: none;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.5;
   overflow: scroll;
-  padding: 15px;
+  padding: 20px;
   position: absolute;
   top: 10px;
   left: 310px;
   opacity: 0.7;
   height: 300px;
-  width: 400px;
 }
 
 .featured-title {
-  font-size: 20px;
-  padding: 5px;
+  font-size: 24px;
+  padding: 2px 2px 5px 2px;
 }
 
-.featured-container:hover .featured-desc {
-  display: block;
-}
 .card-container:hover .pet-description {
   display: block;
   cursor: pointer;
-}
-
-.featured-container:hover {
-  width: 700px;
-  transition: .75s ease;
 }
 
 .card-container:hover {
@@ -127,7 +116,6 @@ button {
   position: absolute;
   left: 7px;
   top: 0px;
-  opacity: 1;
   z-index: 1;
 }
 
@@ -150,7 +138,8 @@ button .dog-ear-btn {
 }
 
 img {
-  height: 300px;
+  background-color: #253848;
+  height: 290px;
   width: 300px;
   position: absolute;
   left: 0px;

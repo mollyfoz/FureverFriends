@@ -5,6 +5,7 @@ import App from './App'
 import createHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux'
 import configureStore from './configureStore'
+import { Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 import './index.css'
 
@@ -17,7 +18,7 @@ const store = configureStore(devTools, history)
 const router = (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App />
+      <Route path='/' component={ App } />
     </ConnectedRouter>
   </Provider>
 )

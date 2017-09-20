@@ -3,14 +3,28 @@ import PetList from './Components/PetList/PetList'
 import Search from './Components/Search/Search'
 import PetListContainer from './containers/PetListContainer'
 import { Link } from 'react-router-dom'
-import { Route, Switch } from 'react-router'
+import { Route } from 'react-router'
 import './App.css'
 
 
 export class App extends Component {
 
   componentDidMount() {
-    this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=dog&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
+    this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=cat&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
+  }
+
+  filterData(props) {
+    console.log('props ', this.props);
+    if (this.props.location.pathname === "/dogs") {
+      console.log('dogs', this.props.dogs);
+      return (this.props.dogs)
+    } else if (this.props.location.pathname === "/cats") {
+      console.log('cats');
+      return (this.props.cats)
+    } else if (this.props.location.pathname === "/favorites") {
+      console.log('faves');
+      return (this.props.faves)
+    }
   }
 
   render() {
@@ -30,16 +44,18 @@ export class App extends Component {
         </header>
 
         <section className='search-container'>
+
           <Search fireSearch={this.props.fireSearch} />
+
         </section>
 
         <section className='body-container'>
-          <Switch>
+
             <Route exact path='/' component={ PetList }/>
-            <Route exact path='/dogs' render={ () => <PetList dogs={true}/> } />
-            <Route exact path='/cats' render={ () => <PetList cats={true}/> }  />
-            <Route exact path='/favorites' render={ () => <PetList fave={true} /> }/>
-          </Switch>
+            <Route exact path='/dogs' render={ (props) => <PetList type={ this.filterData(props) } /> } />
+            <Route exact path='/cats' render={ () => <PetList type={ this.filterData() } /> }  />
+            <Route exact path='/favorites' render={ () => <PetList type={ this.filterData() } /> }/>
+
         </section>
       </div>
     )

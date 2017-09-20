@@ -27,7 +27,7 @@ export const Pet = ({ petDetails, favorite, toggleFaves, featured }) => {
       </div>
       {
         (featured) && <div className='featured-desc'>
-          <h3 className='featured-title'>Featured Pet from { petDetails.city }, { petDetails.state }</h3>
+          <h3 className='featured-title'>Featured Pet from { petDetails.city }, { petDetails.state } </h3>
           <p>{ petDetails.desc }</p>
           </div>
       }
