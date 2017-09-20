@@ -21,7 +21,6 @@
   color: #fff;
   cursor: pointer;
   font-size: 24px;
-  /*margin: 5px 35px 35px 0;*/
   padding: 10px;
   text-align: center;
   height: 309px;
@@ -42,7 +41,7 @@
 }
 
 .pet-description {
-  background-color: #fff;
+  background-color: #F8FDF8;
   display: none;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
@@ -91,7 +90,7 @@ button {
   border: none;
   cursor: pointer;
   outline: none;
-  opacity: .9;
+  /*opacity: .9;*/
   padding: 20px;
   position: absolute;
   left: 7px;
