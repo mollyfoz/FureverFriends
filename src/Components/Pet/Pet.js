@@ -1,10 +1,10 @@
 import React from 'react'
 import './Pet.css'
 
-export const Pet = ({ petDetails, favorite, toggleFaves, featured }) => {
+export const Pet = ({ petDetails, toggleFaves, featured }) => {
 
   const addContainerClass = featured ? 'featured-container' : 'card-container'
-  const activeFaveClass = favorite ? 'svg-active' : 'svg-inactive'
+  const activeFaveClass = petDetails.favorite ? 'svg-active' : 'svg-inactive'
 
   return (
     <div className={ addContainerClass }>
