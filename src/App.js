@@ -15,7 +15,7 @@ export class App extends Component {
 
   filterData() {
     if (this.props.location.pathname === '/dogs') {
-      return (this.props.dogs)
+      return (this.props.dogs.map(dog => dog))
     } else if (this.props.location.pathname === '/cats') {
       return (this.props.cats)
     } else if (this.props.location.pathname === '/favorites') {
@@ -46,8 +46,8 @@ export class App extends Component {
         <section className='body-container'>
 
             <Route exact path='/' component={ PetList }/>
-            <Route exact path='/dogs' render={ () => <PetList type={ this.filterData() } /> } />
-            <Route exact path='/cats' render={ () => <PetList type={ this.filterData() } /> }  />
+            <Route exact path='/dogs' render={ () => <PetList type={ this.props.dogs } /> } />
+            <Route exact path='/cats' render={ () => <PetList type={ this.props.cats } /> }  />
             <Route exact path='/favorites' render={ () => <PetList type={ this.filterData() } /> }/>
 
         </section>
