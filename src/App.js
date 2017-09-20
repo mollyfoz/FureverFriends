@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PetList from './Components/PetList/PetList'
 import Search from './Components/Search/Search'
+import FavoriteList from './Components/Favorites/FavoriteList'
+import CatList from './Components/CatList/CatList'
+import DogList from './Components/DogList/DogList'
 import PetListContainer from './containers/PetListContainer'
 import { Link } from 'react-router-dom'
 import { Route } from 'react-router'
@@ -11,16 +14,6 @@ export class App extends Component {
 
   componentDidMount() {
     this.props.fetchRandomPet('https://api.petfinder.com/pet.getRandom?location=80210&animal=cat&output=basic&key=8ff0079b584547c25b3295dd09e2e6af&format=json')
-  }
-
-  filterData() {
-    if (this.props.location.pathname === '/dogs') {
-      return (this.props.dogs.map(dog => dog))
-    } else if (this.props.location.pathname === '/cats') {
-      return (this.props.cats)
-    } else if (this.props.location.pathname === '/favorites') {
-      return (this.props.faves)
-    }
   }
 
   render() {
@@ -46,9 +39,9 @@ export class App extends Component {
         <section className='body-container'>
 
             <Route exact path='/' component={ PetList }/>
-            <Route exact path='/dogs' render={ () => <PetList type={ this.props.dogs } /> } />
-            <Route exact path='/cats' render={ () => <PetList type={ this.props.cats } /> }  />
-            <Route exact path='/favorites' render={ () => <PetList type={ this.filterData() } /> }/>
+            <Route exact path='/dogs' component={ DogList } />
+            <Route exact path='/cats' component={ CatList } />
+            <Route exact path='/favorites' component={ FavoriteList }/>
 
         </section>
       </div>
