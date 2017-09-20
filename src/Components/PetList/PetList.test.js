@@ -10,7 +10,7 @@ describe('PetList component', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<PetList />)
+    wrapper = withRouter(<PetList />)
   })
 
   it('should exist', () => {
