@@ -3,16 +3,17 @@ import { shallow, mount } from 'enzyme'
 import PetList from './PetList'
 import { pet } from '../../mockData/mockPetData'
 import { store, router } from '../../index.js'
+import { withRouter } from 'react-router'
 
 describe('PetList component', () => {
 
-  let wrapper
+  let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<PetList />)
+    wrapper = shallow(<PetList />)
   })
 
-  it.skip('should exist', () => {
+  it('should exist', () => {
    expect(wrapper).toBeDefined()
  })
 

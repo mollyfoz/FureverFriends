@@ -14,11 +14,11 @@ export class App extends Component {
   }
 
   filterData() {
-    if (this.props.location.pathname === "/dogs") {
+    if (this.props.location.pathname === '/dogs') {
       return (this.props.dogs)
-    } else if (this.props.location.pathname === "/cats") {
+    } else if (this.props.location.pathname === '/cats') {
       return (this.props.cats)
-    } else if (this.props.location.pathname === "/favorites") {
+    } else if (this.props.location.pathname === '/favorites') {
       return (this.props.faves)
     }
   }
@@ -40,9 +40,7 @@ export class App extends Component {
         </header>
 
         <section className='search-container'>
-
           <Search fireSearch={this.props.fireSearch} />
-
         </section>
 
         <section className='body-container'>
