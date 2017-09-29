@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PetListContainer from '../../containers/PetListContainer'
 import './Search.css'
-
 class Search extends Component {
   constructor() {
     super()
