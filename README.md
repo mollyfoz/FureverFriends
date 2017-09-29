@@ -21,11 +21,13 @@ Enter your zip code in the search field to search for pets in your area.
 The user can change search location or animal category at any time.
 
 ## Images
-![Landing Page]()
+![Landing Page](https://github.com/mollyfoz/FureverFriends/blob/master/src/screenshots/Screen%20Shot%202017-09-28%20at%207.54.16%20PM.png)
 
-![Category Selection]()
+![Category Selection](https://github.com/mollyfoz/FureverFriends/blob/master/src/screenshots/Screen%20Shot%202017-09-28%20at%207.54.45%20PM.png)
 
-![Favorited Items]()
+![Favorited Items](https://github.com/mollyfoz/FureverFriends/blob/master/src/screenshots/Screen%20Shot%202017-09-28%20at%207.55.11%20PM.png)
+
+![Single Pet Hover](https://github.com/mollyfoz/FureverFriends/blob/master/src/screenshots/Screen%20Shot%202017-09-28%20at%207.55.35%20PM.png)
 
 #### Authors
 This application was created by Molly Foster
