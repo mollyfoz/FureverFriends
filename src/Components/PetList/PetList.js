@@ -4,7 +4,7 @@ import { Pet } from '../Pet/Pet'
 import { Route } from 'react-router-dom'
 import './PetList.css'
 
-export class PetList extends Component {
+class PetList extends Component {
 
   toggleFaves(props) {
     if (props.favorite) {
@@ -36,3 +36,5 @@ export class PetList extends Component {
 }
 
 export default PetListContainer(PetList)
+
+export { PetList }
